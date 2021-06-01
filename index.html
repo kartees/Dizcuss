@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dizcuss</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- CSS only -->
+    
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Odibee+Sans&display=swap" rel="stylesheet">  -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h3>Dizcuss <span class="beta">CSE &nbsp; III&nbsp; ONLY</span> <span class="beta exam">Demo Testing </span></h3>
+    </div>
+    <div class="question">
+        <br><br>
+        <center><h2 class="poster">Post Question</h2></center>
+          <textarea type="description" placeholder="Copy the Question and Paste here !!" name="quest" id="quest" required></textarea>
+          <textarea type="description"  placeholder="Enter Option or Brief Answer" name="anss"id="anss" required></textarea>
+          <br><br>
+            <center><button type="submit" id="submit" onclick="full()">POST</button></center>     
+    </div>
+   <!-- finishing the question question -->
+
+    <center><table id="all"  cellspacing="20px">
+        <tr>   
+        </tr>
+    </table></center>
+    <p id="goto-top">go to Top</p>
+    <script type="text/javascript" src="js/postQuestion.js"></script>   
+    <script type="text/javascript" src="js/show.js"></script> 
+    <script type="text/javascript">
+      var toTop = document.getElementById("goto-top");
+  
+    toTop.addEventListener("click", function(){
+    scrollToTop(400);
+    });
+    function scrollToTop(scrollDuration) {
+        var scrollStep = -window.scrollY / (scrollDuration / 15),
+            scrollInterval = setInterval(function(){
+            if ( window.scrollY != 0 ) {
+                window.scrollBy( 0, scrollStep );
+            }
+            else clearInterval(scrollInterval); 
+        },15);
+    }
+    </script>  
+</body>
+</html>
