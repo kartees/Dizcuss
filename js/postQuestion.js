@@ -49,6 +49,8 @@ function full()
             show.innerHTML = "Posted Successfully";
             show.disabled = true;
             setTimeout(() => { show.classList.remove("success"); show.innerHTML = "Post"; show.disabled = false;}, 1200);
+            document.getElementById("quest").value = "";
+            document.getElementById("anss").value = "";
              })
          .catch(console.log);
 }
