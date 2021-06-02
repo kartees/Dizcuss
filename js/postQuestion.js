@@ -11,8 +11,6 @@ function full()
    var question = quest.value;
    var answer = ans.value;
    console.log(question, answer);
-
-//    now getting count
    let length = question.length;
    if(length%2==0)
    {
@@ -42,15 +40,17 @@ function full()
          answer: word2,
      }
      let key = word11+word2;
+     var show = document.getElementById("submit");
      ref
          .child(key)
          .set(posting)
          .then(ref => { 
-     
-          alert("POSTED SUCCESSFULLY !");
+            show.classList.add("success"); 
+            show.innerHTML = "Posted Successfully";
+            show.disabled = true;
+            setTimeout(() => { show.classList.remove("success"); show.innerHTML = "Post"; show.disabled = false;}, 1200);
              })
          .catch(console.log);
-         location.reload();
 }
 
  
