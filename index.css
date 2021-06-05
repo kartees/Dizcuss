@@ -91,9 +91,10 @@ textarea
     display: inline-block;
     position: relative;
     margin-left: 8%;
-    
-   
+    font-size: 1.9vh;
+    color:rgb(41, 41, 41)
 }
+
 #anss
 {
     
@@ -230,7 +231,7 @@ table{
       }
       textarea::placeholder
       {
-          font-size: 9px;
+          font-size: 11px;
       }
     }
  
@@ -242,6 +243,6 @@ table{
       }
       textarea::placeholder
       {
-          font-size: 9px;
+          font-size: 11px;
       }
   }

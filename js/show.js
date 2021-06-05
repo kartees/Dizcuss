@@ -11,6 +11,7 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 var array = [];
+var displayArray = [];
 let ref = firebase.database().ref("post");
 
  ref.on("value", function(data){
@@ -20,8 +21,8 @@ let ref = firebase.database().ref("post");
   		var tbl = document.getElementById('all');
   		var data = chill.val();
   		let keys = Object.keys(data);
-  	  var temp1 = data[keys[1]];
-  	  var temp2 =data[keys[2]];
+  	  var temp1 = data[keys[1]].trim();
+  	  var temp2 =data[keys[2]].trim();
       var temp3 = data[keys[0]];
       var temp1Array = temp1.split(" ");
       var temp2Array = temp2.split(" ");
@@ -42,12 +43,23 @@ let ref = firebase.database().ref("post");
       {
         part3 += String.fromCharCode(temp3Array[i]);
       }
-      if(array.indexOf(part1) >= 0)
+      var an1 = part1.trim().length;
+      var an2 = part2.trim().length;
+      var an = part1.trim();
+      an += part2.trim();
+   
+      var rest = an1+an2;
+      keyArray = rest + " " + temp1;
+      
+      if(displayArray.indexOf(keyArray.trim()+part3) >= 0)
       {
-        part1= "";
+        //  location.reload();
+         console.log(keyArray.trim());
+         return;
       }
       else{
-      array.push(part1);
+      array.push(keyArray.trim());
+      displayArray.push(keyArray.trim()+part3);
       var row =  tbl.insertRow();
       var call1 = row.insertCell();
   		var call2 = row.insertCell();
