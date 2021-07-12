@@ -60,7 +60,7 @@ function full()
              var fun = dump.val();
              let keys = Object.keys(fun);
              var str = fun[keys[0]];
-             var tempstr = "  (upd ->) " + ans.value;
+             var tempstr = "  (updated as) " + ans.value;
              var tempcode = "";
              for(var i=0; i<tempstr.length; i++)
              {
